@@ -68,7 +68,7 @@
     transition: all 0.3s ease;
     margin-top: 40px;
   }
-  a.discrete :hover {
+  a.discrete:hover {
     border-bottom: solid 1px rgba(#000, 0.2);
   }
 
@@ -91,7 +91,7 @@
     transition: all 0.3s ease;
     outline: 0; 
   }
-  button :hover {
+  button:hover {
     transform:  translateY(-3px);
     box-shadow:  0 2px 6px -1px rgba(0,118,184, 65%); 
   }
@@ -148,7 +148,7 @@
   .floating-label {
     position: relative;
     margin-bottom: 10px;
-    width: 100%;  
+
   }
   .floating-label label {
     position: absolute;
@@ -156,52 +156,16 @@
     left: 0;
     opacity: 0;
     transition: all 0.3s ease;
-    padding-left: 44px;
   }
-  .floating-label input {
-    width: calc(100% - 44px);
-    margin-left: auto;
-    display: flex;
-  }
-  .floating-label .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 56px;
-    width: 44px;
-    display: flex; 
-  }
-  .floating-label .icon path {
-    height: 30px;
-    width: 30px;
-    margin: auto;
-    opacity: 0.15;
-    transition: all 0.3s ease;   
-  }
-  .floating-label .icon svg path {
-    transition: all 0.3s ease;
-  }
+
   input:not(:placeholder-shown) {
     padding: 28px 0px 12px 0px;
   }
+ 
   input:not(:placeholder-shown) + label {
     transform: translateY(-10px);
     opacity: 0.7;
   }
-  @input:valid:not(:placeholder-shown) + label + .icon {
-    svg {
-        opacity: 1;
-        path {
-            fill: rgb(0, 154, 197);
-          }
-    }
-  }
-
-  input:not(:valid):not(:focus) + label + .icon {
-    animation-name: shake-shake;
-    animation-duration: 0.3s;
-  }
-
   select {
     font-size: 16px;
     padding: 20px 0px;
@@ -229,49 +193,6 @@
     transform: translateY(-10px);
     opacity: 0.7;
   }
-  @select:valid:not(:placeholder-shown) + label + .icon {
-    svg {
-        opacity: 1;
-        path {
-            fill: rgb(0, 154, 197);
-          }
-    }
-  }
-
-  select:not(:valid):not(:focus) + label + .icon {
-    animation-name: shake-shake;
-    animation-duration: 0.3s;
-  }
-  select :hover {
-    transform:  translateY(-3px);
-    box-shadow:  0 2px 6px -1px rgba(rgb(0, 154, 197), .65); 
-    color: rgb(0, 0, 0);
-  }
-  select :hover :active {
-      transform:  scale(.99);
-      color: rgb(0, 0, 0);
-    }
-
-  @keyframes shake-shake {
-    0% {
-      transform: translateX(-var(--displacement));
-    }
-    20% {
-      transform: translateX(var(--displacement));
-    }
-    40% {
-      transform: translateX(-var(--displacement));
-    }
-    60% {
-      transform: translateX(var(--displacement));
-    }
-    80% {
-      transform: translateX(-var(--displacement));
-    }
-    100% {
-      transform: translateX(0px);
-    }
-  }
   .session {
     display: flex;
     flex-direction: row;
@@ -298,3 +219,10 @@
     margin: 20px;
   }
   
+  .error{
+    display:none;
+    text-align: left;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    color: red;
+  }
