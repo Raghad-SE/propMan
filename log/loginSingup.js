@@ -81,7 +81,7 @@ function matchingPassword() {
 }
 
 
-/*function start(){  
+function start(){  
   //for singup 
   var singbutton = document.getElementById( "singbutton" );
   singbutton.addEventListener( "click", ValidatePhone );
@@ -93,14 +93,14 @@ function matchingPassword() {
 } // end function start
 window.addEventListener( "load", start);
 */
-const phoneNumber = document.getElementById("phoneNumber");
-const password = document.getElementById("password");
-const phonenumberError = document.getElementById("phonenumber-error");
-const passwordError = document.getElementById("password-error");
-const submitBtn = document.querySelector('#singbutton');
+var phoneNumber = document.getElementById("phoneNumber");
+var password = document.getElementById("password");
+var phonenumberError = document.getElementById("phonenumber-error");
+var passwordError = document.getElementById("password-error");
+var submitBtn = document.querySelector('.signup-btn-insingup');
 
-phoneNumber.addEventListener("keyup", () => {
-  if (phoneNumber.value == "") {
+phoneNumber.addEventListener("onfocus", () => {
+  if (phoneNumber.value == ""||phoneNumber.value==null) {
     phonenumberError.classList.add('phonenumber-error');
     phonenumberError.style.display = "block";
   } else {
@@ -135,4 +135,5 @@ submitBtn.addEventListener("click", () => {
       console.log(cred);
 
   }
+  //"validate user?"
 });
