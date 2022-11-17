@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PROPMAN</title>
+  <link href="css/PropertyOwnerStyle.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+</head>
+<body>
+
+
+<div class="wrapper hover_collapse">
+	<div class="top_navbar">
+		<div class="logo"><a class="navbar-brand" href="#"><img src="images/propman.png" alt=""></a></div>
+		<div class="menu">
+			<div class="hamburger">
+				<i class="fas fa-bars"></i>
+			</div>
+
+		</div>
+	</div>
+
+
+<!--upload Contract Shahad-->	
+<div class="textProp">
+    <button id="close" class="buttonx">&times;</button>
+    <div id="multi-step-form-container">
+        <!-- Form Steps / Progress Bar -->
+        <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+            <!-- Step 1 -->
+            <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <a class="mx-2">
+                    <span class="form-stepper-circle">
+                        <span>1</span>
+                    </span>
+                    <div class="label">Upload The File</div>
+                </a>
+            </li>
+            <!-- Step 2 -->
+            <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>2</span>
+                    </span>
+                    <div class="label text-muted">Tenant</div>
+                </a>
+            </li>
+            <!-- Step 3 -->
+            <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>3</span>
+                    </span>
+                    <div class="label text-muted">Property</div>
+                </a>
+            </li>
+        </ul>
+        <!-- Step Wise Form Content -->
+        <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+            <!-- Step 1 Content -->
+            <section id="step-1" class="form-step">
+                <!---<h2 class="font-normal">Upload The File</h2> -->
+                <!-- Step 1 input fields -->
+                <div class="mt-3">
+                    <div class="card">
+                        <h3>Upload File Contract</h3>
+                        <div class="drop_box">
+                        <header>
+                            <h4>Select File here</h4>
+                        </header>
+                        <p>Files Supported: PDF</p>
+                        <label for = "fileID" class="btn">Upload Files</label>
+                        <input class="btn" hidden type="file" accept=".pdf" id="fileID" style="display:none; color: inherit;">
+                        <!--<input type="file" hidden accept=".pdf" id="fileID" style="display:none;">
+                        <button class="btn">Choose File</button>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+                </div>
+            </section>
+            <!-- Step 2 Content, default hidden on page load. -->
+            <section id="step-2" class="form-step d-none">
+                <h2 class="font-normal">Tenant</h2>
+                <!-- Step 2 input fields -->
+                <div class="mt-3">
+                    <div class="floating-label">
+                        <input placeholder="Tenant Name" type="text" name="tenantName" id="tenantName" autocomplete="off">
+                        <label for="tenantName">Tenant Name:</label>
+                      </div>
+                    <div class="floating-label">
+                        <input placeholder="Email" type="email" name="tenantEmail" id="tenantEmail" autocomplete="off">
+                        <label for="tenantEmail">Email:</label>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                    <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button>
+                </div>
+            </section>
+            <!-- Step 3 Content, default hidden on page load. -->
+            <section id="step-3" class="form-step d-none">
+                <h2 class="font-normal">Property informations</h2>
+                <!-- Step 3 input fields -->
+                <div class="mt-3">
+                  
+                    <!--templet for property info-->
+                   <form  action=""  autocomplete="off">
+                    <div class="floating-label">
+                      <input placeholder="Building No." type="number" name="buildingNo" id="buildingNo" min="1" autocomplete="off">
+                      <label for="buildingNo">Building No.:</label>
+                    </div>
+                    <div class="floating-label">
+                      <input placeholder="Secondary No." type="number" name="secondaryNo" id="secondaryNo" min="1" autocomplete="off">
+                      <label for="secondaryNo">Secondary No.:</label>
+                    </div>
+                    <div class="floating-label">
+                        <input placeholder="Floor No." type="number" name="floorNo" id="floorNo" autocomplete="off">
+                        <label for="floorNo">Floor No.:</label>
+                    </div>
+                    <div class="floating-label">
+                        <input placeholder="Unit No." type="number" name="unitNo" id="unitNo" min="0" autocomplete="off">
+                        <label for="unitNo">Unit No.:</label>
+                    </div>
+                   </form>
+
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button>
+                    <button class="button submit-btn" type="submit">Save</button>
+                </div>
+            </section>
+        </form>
+    </div>
+</div>
+
+<!--DASHBOARD for sama-->
+	<div class="sidebar">
+		<div class="sidebar_inner">
+		<ul>
+			<li>
+				<a href="#dashboard">
+					<span class="icon"><i class="fa fa-qrcode"></i></span>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-tasks"></i></span>
+					<span class="text">Review tenants summary</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-money-check-alt"></i></span>
+					<span class="text">Payment status</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-pen"></i></span>
+					<span class="text">Maintenance request</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-cogs"></i></span>
+					<span class="text">Maintenance status</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-calendar-alt"></i></span>
+					<span class="text">review due date</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-id-card"></i></span>
+					<span class="text">Contact</span>
+				</a>
+			</li>
+
+		</ul>
+		</div>
+	</div>
+
+
+</div>
+
+<section class = "content-area" id="dashboard">
+	<div class ="heading"> 
+		<h2>Dashboard</h2>
+	</div>
+
+	<div class ="cards">
+		<div class="card col-md-4">
+			<div class="file-img"></div>
+			<span class="file-title">Add Tenant : </span> 
+			<br><br>
+			<a class="btn" id="addTenant">+</a> <br><br>
+		</div>
+	</div>
+</section> 
+
+
+<script src="js/PropertyOwner.js"></script>
+</body>
+</html>
