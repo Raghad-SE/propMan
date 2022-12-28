@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PROPMAN</title>
+  <link href="css/PropertyOwnerStyle.css" rel="stylesheet">
+  <link rel="icon" href="images\Propman.png">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+</head>
+<body>
+
+
+<div class="wrapper hover_collapse">
+	<div class="top_navbar">
+		<div class="logo"><a class="navbar-brand" href="#"><img src="images/propman.png" alt=""></a></div>
+		<div class="menu">
+			<div class="hamburger">
+				<i class="fas fa-bars"></i>
+			</div>
+
+		</div>
+	</div>
+
+
+<!--upload Contract Shahad-->	
+<div class="textProp">
+    <button id="close" class="buttonx">&times;</button>
+    <div id="multi-step-form-container">
+        <!-- Form Steps / Progress Bar -->
+        <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+            <!-- Step 1 -->
+            <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <a class="mx-2">
+                    <span class="form-stepper-circle">
+                        <span>1</span>
+                    </span>
+                    <div class="label">Upload The File</div>
+                </a>
+            </li>
+            <!-- Step 2 -->
+            <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>2</span>
+                    </span>
+                    <div class="label text-muted">Tenant</div>
+                </a>
+            </li>
+            <!-- Step 3 -->
+            <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>3</span>
+                    </span>
+                    <div class="label text-muted">Property</div>
+                </a>
+            </li>
+        </ul>
+        <!-- Step Wise Form Content -->
+        <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+            <!-- Step 1 Content -->
+            <section id="step-1" class="form-step">
+                <!---<h2 class="font-normal">Upload The File</h2> -->
+                <!-- Step 1 input fields -->
+                <div class="mt-3">
+                    <div class="card">
+                        <h3>Upload File Contract</h3>
+                        <div class="drop_box">
+                        <header>
+                            <h4>Select File here</h4>
+                        </header>
+                        <p>Files Supported: PDF</p>
+                        <label for = "fileID" class="btn">Upload Files</label>
+                        <input class="btn" hidden type="file" accept=".pdf" id="fileID" style="display:none; color: inherit;">
+                        <!--<input type="file" hidden accept=".pdf" id="fileID" style="display:none;">
+                        <button class="btn">Choose File</button>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+                </div>
+            </section>
+            <!-- Step 2 Content, default hidden on page load. -->
+            <section id="step-2" class="form-step d-none">
+                <h2 class="font-normal">Tenant</h2>
+                <!-- Step 2 input fields -->
+                <div class="mt-3">
+                    <div class="floating-label">
+                        <input placeholder="Tenant Name" type="text" name="tenantName" id="tenantName" autocomplete="off">
+                        <label for="tenantName">Tenant Name:</label>
+                      </div>
+                    <div class="floating-label">
+                        <input placeholder="Email" type="email" name="tenantEmail" id="tenantEmail" autocomplete="off">
+                        <label for="tenantEmail">Email:</label>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                    <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button>
+                </div>
+            </section>
+            <!-- Step 3 Content, default hidden on page load. -->
+            <section id="step-3" class="form-step d-none">
+                <h2 class="font-normal">Property informations</h2>
+                <!-- Step 3 input fields -->
+                <div class="mt-3">
+                  
+                    <!--templet for property info-->
+                   <form  action=""  autocomplete="off">
+                    <div class="floating-label">
+                        <!--input placeholder="Building No." type="number" name="buildingNo" id="buildingNo" min="1" autocomplete="off"-->
+                        <select name="City" required>
+                            <option value="">City</option>
+                            <option value="Abha">Abha</option>
+                            <option value="Abqaiq">Abqaiq</option>
+                            <option value="Al-Baḥah">Al-Baḥah</option>
+                            <option value="Al-Dammam">Al-Dammam</option>
+                            <option value="Al-Hufuf">Al-Hufuf</option>
+                            <option value="Al-Jawf">Al-Jawf</option>
+                            <option value="Al-Kharj">Al-Kharj</option>
+                            <option value="Al-Khubar">Al-Khubar</option>
+                            <option value="Al-Qatif">Al-Qatif</option>
+                            <option value="Al-Taif">Al-Taif</option>
+                            <option value="Arar">Arar</option>
+                            <option value="Buraydah">Buraydah</option>
+                            <option value="Dhahran">Dhahran</option>
+                            <option value="Hail">Hail</option>
+                            <option value="Jeddah">Jeddah</option>
+                            <option value="Jizan">Jizan</option>
+                            <option value="Khamis Mushayt">Khamis Mushayt</option>
+                            <option value="Mecca">Mecca</option>
+                            <option value="Medina">Medina</option>
+                            <option value="Najran">Najran</option>
+                            <option value="Ras Tanura">Ras Tanura</option>
+                            <option value="Riyadh">Riyadh</option>
+                            <option value="Sakaka">Sakaka</option>
+                            <option value="Tabuk">Tabuk</option>
+                            <option value="Yanbu">Yanbu</option>
+                        </select>
+                    <label for="city">City.:</label>
+                </div>
+
+                    <div class="floating-label">
+                        <input placeholder="Street Name/No." type="text" name="StreetName/No" id="StreetName/No" autocomplete="off">
+                        <label for="StreetNo">Street Name/No.:</label>
+                      </div>
+
+                      <div class="floating-label">
+                        <!--input placeholder="Building No." type="number" name="buildingNo" id="buildingNo" min="1" autocomplete="off"-->
+                        <select name="Building_Type" required>
+                        <option value="">Building Type</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="villa">Villa</option>
+                        <option value="store">Store</option>
+                    </select>
+                    <label for="buildingNo">Building Type.:</label>
+                </div>
+
+                    <div class="floating-label">
+                      <input placeholder="Building No." type="text" name="buildingNo" id="buildingNo" autocomplete="off">
+                      <label for="buildingNo">Building No.:</label>
+                    </div>
+
+                    <div class="floating-label">
+                      <input placeholder="Secondary No." type="number" name="secondaryNo" id="secondaryNo" min="1" autocomplete="off">
+                      <label for="secondaryNo">Secondary No.:</label>
+                    </div>
+                    <div class="floating-label">
+                        <input placeholder="Floor No." type="number" name="floorNo" id="floorNo" autocomplete="off">
+                        <label for="floorNo">Floor No.:</label>
+                    </div>
+                    <div class="floating-label">
+                        <input placeholder="Unit No." type="number" name="unitNo" id="unitNo" min="0" autocomplete="off">
+                        <label for="unitNo">Unit No.:</label>
+                    </div>
+                    <div class="floating-label">
+                        <input placeholder="Start contract date" type="date" name="StartContract" id="StartContract" autocomplete="off">
+                        <label for="StartContract">Start Contract Date.:</label>
+                    </div>
+                    <div class="floating-label">
+                        <input placeholder="End Contract Date." type="date" name="EndContract" id="EndContract" autocomplete="off">
+                        <label for="EndContract">End Contract Date.:</label>
+                    </div>
+                    <div class="floating-label">
+                        <!--label for="PaymentStatus">Rent Payment cycle.:</label>
+                        <lable><input type = "radio" name ="payment status" id="Paid"> yearly </lable>
+                        <lable><input type = "radio" name ="payment status" id="unpaid"> half-yearly </lable--> 
+                            <select name="Payment_Status" required>
+                                <option value="paid">yearly</option>
+                                <option value="unpaid">half-yearly</option>
+                            </select> 
+                            <label for="PaymentCycle">Rent Payment cycle.:</label> 
+                    </div>
+                    <div class="floating-label">
+                        <select name="Payment_Status" required>
+                            <option value="paid">Paid</option>
+                            <option value="unpaid">Unpaid</option>
+                            <option value="underProcessing">Under Processing Payment</option>
+                        </select> 
+                        <label for="paymentStatus">Current rent payment status.:</label>  
+                    </div>
+                    <div class="floating-label">
+                        <input placeholder="Next/upcoming Rent Payment Due Date." type="date" name="RentPayment" id="RentPayment" autocomplete="off">
+                        <label for="RentPayment">Next/upcoming Rent Payment Due Date.:</label>
+                    </div>
+                   </form>
+
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button>
+                    <button class="button submit-btn" type="submit">Save</button>
+                </div>
+            </section>
+        </form>
+    </div>
+</div>
+
+<!--DASHBOARD for sama-->
+	<div class="sidebar">
+		<div class="sidebar_inner">
+		<ul>
+			<li>
+				<a href="#dashboard">
+					<span class="icon"><i class="fa fa-qrcode"></i></span>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-tasks"></i></span>
+					<span class="text">Review tenants summary</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-money-check-alt"></i></span>
+					<span class="text">Payment status</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-pen"></i></span>
+					<span class="text">Maintenance request</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-cogs"></i></span>
+					<span class="text">Maintenance status</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-calendar-alt"></i></span>
+					<span class="text">review due date</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fa fa-id-card"></i></span>
+					<span class="text">Contact</span>
+				</a>
+			</li>
+
+		</ul>
+		</div>
+	</div>
+
+
+</div>
+
+<section class = "content-area" id="dashboard">
+	<div class ="heading"> 
+		<h2>Dashboard</h2>
+	</div>
+
+    <div>
+        <a class="btn" id="addTenant"> + Upload New Contract</a> 
+    </div>
+
+	<div class ="cards">
+		<div class="card col-md-4">
+			<div class="imag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z"/>
+              </svg>
+            </div>
+
+            <div class="BasicInfo">
+                <label class="labe" for="ContractTitle">Contract title :</label>
+                <p aria-placeholder="Contract title:"></p>
+                <label class="labe" for="TenantName">Tenant Name:</label>  
+            </div>
+
+            <div class="floating-label" style="width: 25%;">  </div>
+
+            <!-------Buttons------->
+            <div> 
+                <ul class="wrapper">
+                    <li>
+                        <button class="butt" id="delete" onclick="confirmation()">
+                            <span class="tooltip">Delete</span>
+                            <span><i class="far fa-trash-alt"></i></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="butt" id="Edit">
+                            <span class="tooltip">Edit</span>
+                            <span><i class="far fa-edit"></i></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="butt" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <span class="tooltip">View</span>
+                            <span><i class="fas fa-eye"></i></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>   
+			
+		</div>
+	</div>
+</section> 
+
+<!-- Delete Modal ->
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form class="modal-content" action="/action_page.php">
+      <div class="container">
+        <h1>Delete Account</h1>
+        <p>Are you sure you want to delete your account?</p>
+      
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+        </div>
+      </div>
+    </form>
+  </div-->
+
+  
+
+
+
+<script src="js/PropertyOwner.js"></script>
+</body>
+</html>
